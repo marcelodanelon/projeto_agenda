@@ -1,8 +1,9 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
+const CONNECTIONSTRING='mongodb+srv://marceloddanelon:marcelo1235@cluster0.bzwijer.mongodb.net/AGENDA?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.emit('pronto');
   })
